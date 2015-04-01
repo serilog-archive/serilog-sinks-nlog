@@ -11,7 +11,7 @@
     <description>Serilog event sink that writes to NLog. Merge your new Serilog event stream into your existing NLog infrastructure.</description>
     <tags>serilog logging NLog</tags>
     <dependencies>
-      <dependency id="Serilog" version="[1.4,2)" />
+      <dependency id="Serilog" version="[1.4.204,2)" />
       <dependency id="NLog" version="3.0.0.0" />
     </dependencies>
   </metadata>
