@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Serilog.Sinks.NLog", "src\Serilog.Sinks.NLog\Serilog.Sinks.NLog.xproj", "{BE40FF8E-7EEA-4094-90F0-CD67B061DCE4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{88A2B525-3326-4652-9BA4-A26227703B4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DC682EBD-33E3-4ECF-922A-C022758E34E6}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Serilog.Sinks.NLog.Tests", "test\Serilog.Sinks.NLog.Tests\Serilog.Sinks.NLog.Tests.xproj", "{2C54FEB0-E282-40E8-90F4-0CDB4E7CB680}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,16 @@ Global
 		{BE40FF8E-7EEA-4094-90F0-CD67B061DCE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE40FF8E-7EEA-4094-90F0-CD67B061DCE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE40FF8E-7EEA-4094-90F0-CD67B061DCE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C54FEB0-E282-40E8-90F4-0CDB4E7CB680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C54FEB0-E282-40E8-90F4-0CDB4E7CB680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C54FEB0-E282-40E8-90F4-0CDB4E7CB680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C54FEB0-E282-40E8-90F4-0CDB4E7CB680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE40FF8E-7EEA-4094-90F0-CD67B061DCE4} = {88A2B525-3326-4652-9BA4-A26227703B4C}
+		{2C54FEB0-E282-40E8-90F4-0CDB4E7CB680} = {DC682EBD-33E3-4ECF-922A-C022758E34E6}
 	EndGlobalSection
 EndGlobal
