@@ -3,16 +3,18 @@ using NLog;
 using Serilog.Core;
 using Serilog.Debugging;
 using Serilog.Events;
+using Serilog.Formatting;
+using System.IO;
 
 namespace Serilog.Sinks.NLog
 {
     class NLogSink : ILogEventSink
     {
-        readonly IFormatProvider formatProvider;
+        readonly ITextFormatter textFormatter;
 
-        public NLogSink(IFormatProvider formatProvider = null)
+        public NLogSink(ITextFormatter textFormatter)
         {
-            this.formatProvider = formatProvider;
+            this.textFormatter = textFormatter;
         }
 
         public void Emit(LogEvent logEvent)
@@ -30,10 +32,14 @@ namespace Serilog.Sinks.NLog
             }
 
             var level = GetMappedLevel(logEvent);
-            var message = logEvent.RenderMessage(formatProvider);
+
+            var renderSpace = new StringWriter();
+            this.textFormatter.Format(logEvent, renderSpace);
+
+            //var message = logEvent.RenderMessage(formatProvider);
             var exception = logEvent.Exception;
 
-            var nlogEvent = new LogEventInfo(level, loggerName, message)
+            var nlogEvent = new LogEventInfo(level, loggerName, renderSpace.ToString())
             {
                 Exception = exception
             };

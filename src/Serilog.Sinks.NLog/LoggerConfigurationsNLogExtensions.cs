@@ -16,6 +16,7 @@ using System;
 using Serilog.Sinks.NLog;
 using Serilog.Configuration;
 using Serilog.Events;
+using Serilog.Formatting.Display;
 
 namespace Serilog
 {
@@ -24,6 +25,8 @@ namespace Serilog
     /// </summary>
     public static class LoggerConfigurationsNLogExtensions
     {
+        const string DefaultOutputTemplate = "{Message}";
+
         /// <summary>
         /// Adds a sink that writes adapted log events to NLog.
         /// </summary>
@@ -35,14 +38,17 @@ namespace Serilog
         public static LoggerConfiguration NLog(
             this LoggerSinkConfiguration loggerConfiguration,
             LogEventLevel restrictedToMinimumLevel = LevelAlias.Minimum,
+            string outputTemplate = DefaultOutputTemplate,
             IFormatProvider formatProvider = null)
         {
             if (loggerConfiguration == null)
             {
-                throw new ArgumentNullException("loggerConfiguration");
+                throw new ArgumentNullException(nameof(loggerConfiguration));
             }
 
-            return loggerConfiguration.Sink(new NLogSink(formatProvider), restrictedToMinimumLevel);
+            var formatter = new MessageTemplateTextFormatter(outputTemplate, formatProvider);
+
+            return loggerConfiguration.Sink(new NLogSink(formatter), restrictedToMinimumLevel);
         }
     }
 }
