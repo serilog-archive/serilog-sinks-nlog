@@ -1,0 +1,27 @@
+{
+  "version": "3.0.0-*",
+  "description": "Serilog event sink that writes to NLog. Merge your new Serilog event stream into your existing NLog infrastructure.",
+  "authors": [ "Serilog Contributors" ],
+  "packOptions": {
+    "tags": [ "serilog", "logging", "NLog" ],
+    "projectUrl": "http://serilog.net",
+    "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
+    "iconUrl": "http://serilog.net/images/serilog-sink-nuget.png"
+  },
+  "dependencies": {
+    "NLog": "4.4.0-betaV15",
+    "Serilog": "2.0.0"
+  },
+
+  "buildOptions": {
+    "keyFile": "../../assets/Serilog.snk"
+  },
+  "frameworks": {
+    "net45": {
+    },
+    "netstandard1.3": {
+      "dependencies": {
+      }
+    }
+  }
+}
