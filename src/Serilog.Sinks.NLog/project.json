@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0-*",
+  "version": "3.0.1-*",
   "description": "Serilog event sink that writes to NLog. Merge your new Serilog event stream into your existing NLog infrastructure.",
   "authors": [ "Serilog Contributors" ],
   "packOptions": {
