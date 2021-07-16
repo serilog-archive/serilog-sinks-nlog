@@ -3,7 +3,6 @@
     <PropertyGroup>
         <Description>Serilog event sink that writes to NLog. Merge your new Serilog event stream into your existing NLog infrastructure.</Description>
         <VersionPrefix>3.0.2</VersionPrefix>
-        <VersionSuffix>preview1</VersionSuffix>
         <Authors>Serilog Contributors</Authors>
         <TargetFrameworks>net40;net45;netstandard1.3;netstandard2.0</TargetFrameworks>
         <AssemblyName>Serilog.Sinks.NLog</AssemblyName>
