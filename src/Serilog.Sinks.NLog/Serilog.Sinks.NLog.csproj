@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Description>Serilog event sink that writes to NLog. Merge your new Serilog event stream into your existing NLog infrastructure.</Description>
+        <VersionPrefix>3.0.2</VersionPrefix>
+        <VersionSuffix>preview1</VersionSuffix>
+        <Authors>Serilog Contributors</Authors>
+        <TargetFrameworks>net40;net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+        <AssemblyName>Serilog.Sinks.NLog</AssemblyName>
+        <AssemblyOriginatorKeyFile>../../assets/Serilog.snk</AssemblyOriginatorKeyFile>
+        <SignAssembly>true</SignAssembly>
+        <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+        <PackageId>Serilog.Sinks.NLog</PackageId>
+        <PackageTags>serilog;logging;NLog</PackageTags>
+        <PackageIconUrl>http://serilog.net/images/serilog-sink-nuget.png</PackageIconUrl>
+        <PackageProjectUrl>http://serilog.net</PackageProjectUrl>
+        <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+        <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+        <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="NLog" Version="4.7.10" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+        <PackageReference Include="Serilog" Version="[1.4.1,1.5.14]" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+        <PackageReference Include="Serilog" Version="[2.0.0,)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <PackageReference Include="Serilog" Version="[2.0.0,)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="Serilog" Version="[2.8.0,)" />
+    </ItemGroup>
+
+</Project>
